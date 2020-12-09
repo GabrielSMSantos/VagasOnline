@@ -1,0 +1,84 @@
+main {
+    display: flex;
+    justify-content: space-between;
+    padding: 30px 4%;
+    background-color: #FAFAFA;
+}
+
+    #vaga {
+        width: 800px;
+        height: 580px;
+        background-color: #fff;
+        border: 1px solid #ccc;
+        border-radius: 10px;
+        padding: 20px;
+    }
+
+        #nomeVaga {
+            color: #175fac;
+        }
+
+        #nomeEmpresa {
+            color: #3489e4;
+        }
+
+            #nomeEmpresa img {
+                margin-right: 5px;
+            }
+
+        #palavrasChaves {
+            margin-top: 25px;
+            font-weight: bolder;
+            color: #888;
+        }
+
+            .palavra {
+                background: rgba(23, 94, 171, 0.7);
+                color: #fff;
+                padding: 5px 10px;
+                margin: 0 5px;
+                border-radius: 10px;
+            }
+
+        #descricaoVaga {
+            margin-top: 25px;
+        }
+
+        #linkCandidatarSe {
+            background-color: #175fac;
+            color: #fff;
+            padding: 10px 50px;
+            border-radius: 10px;
+            text-decoration: none;
+            font-weight: bolder;
+        }
+
+            #linkCandidatarSe:hover {
+                background-color: #2372c7;
+            }
+
+
+    #empresa {
+        width: 320px;
+        height: 300px;
+        border: 1px solid #ccc;
+        border-radius: 10px;
+        padding: 10px;
+        background-color: #fff;
+    }
+
+        #empresa h2 {
+            color: #175fac;
+        }
+        
+        #empresa h2 img {
+            margin-right: 5px;
+        }
+
+        #sobreEmpresa {
+            margin-top: 25px;
+        }
+
+        #enderecoEmpresa {
+            margin-top: 15px;
+        }

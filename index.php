@@ -20,7 +20,7 @@
             when an unknown printer took a galley of type and scrambled it to make a type specimen book.
             </p>
 
-            <a class="linkVaga" href="#">Visualizar Vaga</a>
+            <a class="linkVaga" href="http://localhost/VagasOnline/view/vaga.php">Visualizar Vaga</a>
         </div>
 
         <div class="vaga">
@@ -31,7 +31,7 @@
             when an unknown printer took a galley of type and scrambled it to make a type specimen book.
             </p>
 
-            <a class="linkVaga" href="#">Visualizar Vaga</a>
+            <a class="linkVaga" href="http://localhost/VagasOnline/view/vaga.php">Visualizar Vaga</a>
         </div>
 
         <div class="vaga">
@@ -42,7 +42,7 @@
             when an unknown printer took a galley of type and scrambled it to make a type specimen book.
             </p>
 
-            <a class="linkVaga" href="#">Visualizar Vaga</a>
+            <a class="linkVaga" href="http://localhost/VagasOnline/view/vaga.php">Visualizar Vaga</a>
         </div>
 
         <div class="vaga">
@@ -53,7 +53,7 @@
             when an unknown printer took a galley of type and scrambled it to make a type specimen book.
             </p>
 
-            <a class="linkVaga" href="#">Visualizar Vaga</a>
+            <a class="linkVaga" href="http://localhost/VagasOnline/view/vaga.php">Visualizar Vaga</a>
         </div>
 
         <div class="vaga">
@@ -64,7 +64,7 @@
             when an unknown printer took a galley of type and scrambled it to make a type specimen book.
             </p>
 
-            <a class="linkVaga" href="#">Visualizar Vaga</a>
+            <a class="linkVaga" href="http://localhost/VagasOnline/view/vaga.php">Visualizar Vaga</a>
         </div>
     </main>
 
