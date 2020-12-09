@@ -5,12 +5,12 @@
     font-family: Arial, Helvetica, sans-serif;
 }
 
-body {
+main {
     display: flex;
     justify-content: center;
     align-content: center;
     background-color: #FAFAFA;
-    padding: 10% 0;
+    padding: 5% 0;
 }
 
 form {
@@ -34,11 +34,22 @@ form {
         }
 
         .OptionTipoUsuario {
-            border: 1px solid #000;
+            border: 1px solid #777;
+            color: #777;    
             margin: 0 5px;
-            padding: 5px 10px;
+            padding: 5px 20px;
             border-radius: 10px;
             cursor: pointer;
+        }
+
+        .radioTipo {
+            display: none;
+        }
+
+        .radioTipo:checked ~ .OptionTipoUsuario {
+            background-color: #175fac;
+            border: 1px solid #175fac;
+            color: #fff;
         }
 
     form p {
@@ -47,19 +58,30 @@ form {
         height: 120px;
         padding: 50px 0;
     }
+        .campos {
+            color: #777;
+        }
 
         .campos input {
             width: 100%;
-            padding: 5px;
+            padding: 5px 15px;
             font-size: 18px;
+            border-radius: 10px;
+            border: 2px solid #ddd;
+            outline: none;
         }
+            
+            .campos input:focus {
+                border: 2px solid #999;
+            }
 
         #btnEntrar {
             font-weight: bolder;
             padding: 10px 50px;
-            background-color: transparent;
-            border: 1px solid #0075ff;
-            color: #0075ff;
+            background-color: #175fac;
+            border: 1px solid #175fac;
+            color: #fff;
+            font-weight: bolder;
             border-radius: 10px;
             cursor: pointer;
             outline: none;
@@ -67,6 +89,5 @@ form {
         }
 
             #btnEntrar:hover {
-                background-color: #0075ff;
-                color: #fff;
+                background-color: #2372c7;
             }
