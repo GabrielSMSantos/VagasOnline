@@ -17,6 +17,8 @@ if ($_POST) {
             $_SESSION["nome"] = $resultado["nome_candidato"];
         }
 
+        header("Location: http://localhost/VagasOnline/index.php");
+
     } else {
 
         $resultado = logarEmpresa($login, $senha);
@@ -25,6 +27,8 @@ if ($_POST) {
             $_SESSION["id"] = $resultado["id_empresa"];
             $_SESSION["nome"] = $resultado["nome_empresa"];
         }
+
+        header("Location: http://localhost/VagasOnline/index.php");
        
     }
     
