@@ -49,7 +49,7 @@
             </p>
             <br><br>
 
-            <a id="linkCandidatarSe" href="#">CANDIDATAR-SE</a>
+            <a id="linkCandidatarSe" href="#">CANDIDATAR-SE  <img src="http://localhost/VagasOnline/media/iconCandidatarSe.png"></a>
         </div>
 
 

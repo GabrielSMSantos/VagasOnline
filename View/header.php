@@ -67,7 +67,7 @@
         justify-content: center;
         align-items: center;
         width: 100%;
-        height: 50px;
+        height: 55px;
         color: #fff;
         background-color: #175fac;
         border-bottom: 2px solid #ececec;
@@ -85,6 +85,7 @@
             background: url("http://localhost/VagasOnline/media/iconSearch.png") no-repeat right;
             background-color: #fff;
             border: 1px solid #fff;
+            border-radius: 10px;
         }   
 
         #campoPesquisa img {
@@ -92,6 +93,8 @@
             padding-left: 50px;
         }
 </style>
+
+<?php session_start(); ?>
 
 <header>
         
@@ -106,7 +109,23 @@
 
 
     <div id="dvUsuario">
-        <a href="http://localhost/VagasOnline/view/login.php">Entrar/Cadastrar</a>
+        <?php 
+            if (!isset($_SESSION["id"])):
+        ?>
+            <a href="http://localhost/VagasOnline/view/login.php">Entrar</a>
+            &nbsp;
+            <b>|</b>
+            &nbsp;
+            <a href="http://localhost/VagasOnline/view/cadastro.php">Cadastrar</a>
+        <?php 
+            else:
+        ?>
+            <a href="#"><?= $_SESSION["nome"]; ?></a>
+
+        <?php
+            endif;
+        ?>
+
         <img id="fotoPerfil" src="<?= "http://localhost/VagasOnline/media/iconUser.png"; ?>">
     </div>
 

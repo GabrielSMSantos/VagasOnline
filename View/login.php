@@ -9,20 +9,19 @@
 <body>
     <?php include "header.php"; ?>
 
-
     <main>
-        <form action="#" method="post">
+        <form action="http://localhost/VagasOnline/Source/Controller/LoginController.php" method="post">
             <div id="tipoUsuario">
                 <h2>Entrar como</h2>
 
                 
                 <label for="chkEmpresa">
-                    <input id="chkEmpresa" class="radioTipo" type="radio" name="chkTipoUsuario">
+                    <input id="chkEmpresa" class="radioTipo" type="radio" name="chkTipoUsuario" value="Empresa">
                     <b class="OptionTipoUsuario">Empresa</b>
                 </label>
 
                 <label for="chkCandidato">
-                    <input id="chkCandidato" class="radioTipo" type="radio" name="chkTipoUsuario" checked>
+                    <input id="chkCandidato" class="radioTipo" type="radio" name="chkTipoUsuario" value="Candidato" checked>
                     <b class="OptionTipoUsuario">Candidato</b>
                 </label>
                 
@@ -35,7 +34,7 @@
 
             <p class="campos">
                 <b>SENHA</b><br>
-                <input type="text" name="senha">
+                <input type="password" name="senha">
             </p>
             
             <button id="btnEntrar" type="submit">ENTRAR</button>

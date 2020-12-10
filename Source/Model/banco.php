@@ -1,6 +1,5 @@
 <?php
 
-namespace Source\Model;
 
 define("DATABASE", [
     "host" => "localhost",
@@ -9,35 +8,13 @@ define("DATABASE", [
     "password" => ""
 ]);
 
-class conexao 
-{
-    private static $conn;
+try {
 
-    public static function getInstance()
-    {
-        try {
-
-            if(!isset(self::$conn)) {
-                self::$conn = new \PDO("mysql: host=".DATABASE["host"].";dbname=".DATABASE["db_name"], DATABASE["username"], DATABASE["password"]);
-                self::$conn->setAttribute(\PDO::ATTR_ERRMODE, \PDO::ERRMODE_EXCEPTION);
-            }
-
-        } catch (\PDOException $error) {
-            echo "ERROR: ".$error->getMessage();
-        }
-
-        return self::$conn;
+    if(!isset($conn)) {
+        $conn = new PDO("mysql: host=".DATABASE["host"].";dbname=".DATABASE["db_name"], DATABASE["username"], DATABASE["password"]);
+        $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
     }
 
-
-    public static function prepare($sql)
-    {
-        return self::getInstance()->prepare($sql);
-    }
-
-    public static function query($sql)
-    {
-        return self::getInstance()->query($sql);
-    }
-
+} catch (PDOException $error) {
+    echo "ERROR: ".$error->getMessage();
 }

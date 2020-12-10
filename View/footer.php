@@ -2,7 +2,7 @@
     footer {
         position: relative;
         width: 100%;
-        height: 400px;
+        height: 350px;
         background-color: rgba(35, 114, 199, 0.8);
         color: #fff;
     }
