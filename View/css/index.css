@@ -1,61 +1,76 @@
 
-main {
-    padding: 30px 4%;
+#root {
+    width: 100%;
+    padding: 0 10vw;
     background-color: #FAFAFA;
 }
 
-#cards {
+#root .container {
+    display: flex;
+    flex-direction: column;
+}
+
+
+.wrapperTitle {
+    margin-top: 1rem;
+    position: relative;
+}
+
+
+.wrapperTitle::after {
+    bottom: -10px;
+    content: "";
+    position: absolute;
+    width: 15vw;
+    height: 4px;
+    background-color: #000;
+}
+
+
+.wrapper {
+    margin-top: 1rem;
     display: flex;
     flex-wrap: wrap;
+    align-items: center;
 }
+
 
 .vaga {
     box-sizing: content-box;
-    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
     width: 500px;
-    height: 272px;
+    min-height: 272px;
     border: 1px solid #ececec;
     border-radius: 10px;
     background-color: #fff;
     padding: 10px;
-    margin: 15px 15px 0 0;
+    padding-bottom: 1rem;
+    margin: 1rem 1rem 0 0;
 }
-    .divisao {
-        width: 150px;
-        height: 3px;
-        border-radius: 10px;
-        background-color: #000;
-        margin-top: 5px;
-    }
 
-    .nomeVaga {
-        color: #175fac;
-        margin-bottom: 10px;
-    }
+.nomeVaga {
+    color: #175fac;
+    margin-bottom: 1rem;
+}
 
-    .descricaoVaga {
-        max-height: 150px;
-        overflow: hidden;
-        color: rgb(105, 105, 105);
-    }
+.descricaoVaga {
+    color: rgb(105, 105, 105);
+}
 
-    .linkVaga {
-        position: absolute;
-        bottom: 20px;
-        left: 15px;
-        background-color: #175fac;
-        color: #fff;
-        text-decoration: none;
-        outline: none;
-        padding: 8px 15px;
-        border-radius: 10px;
-        font-weight: bolder;
-    }
+.linkVaga {
+    text-align: center;
+    background-color: #175fac;
+    color: #fff;
+    text-decoration: none;
+    outline: none;
+    padding: 8px 15px;
+    border-radius: 10px;
+    font-weight: bolder;
+    margin-top: 30px;
+}
 
-        .linkVaga:hover {
-            background-color: #2372c7;
-        }
-
-
-
-
+.linkVaga:hover {
+    background-color: #2372c7;
+}
