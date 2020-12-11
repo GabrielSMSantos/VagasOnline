@@ -1,0 +1,74 @@
+
+#root {
+    width: 100%;
+    padding: 0 10vw;
+    background-color: #FAFAFA;
+}
+
+#root .container {
+    display: flex;
+    flex-direction: column;
+}
+
+
+.wrapperTitle {
+    margin-top: 1rem;
+    position: relative;
+}
+
+
+.wrapperTitle::after {
+    bottom: -10px;
+    content: "";
+    position: absolute;
+    width: 15vw;
+    height: 4px;
+    background-color: #000;
+}
+
+
+.wrapper {
+    margin-top: 1rem;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+
+.vaga {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 350px;
+    height: 250px;
+    border: 1px solid #ececec;
+    border-radius: 10px;
+    background-color: #fff;
+    padding: 10px;
+    padding-bottom: 1rem;
+    margin: 1rem 1rem 0 0;
+}
+
+.nomeVaga {
+    color: #175fac;
+    margin-bottom: 1rem;
+}
+
+.descricaoVaga {
+    color: rgb(105, 105, 105);
+}
+
+.linkVaga {
+    text-align: center;
+    background-color: #175fac;
+    color: #fff;
+    text-decoration: none;
+    outline: none;
+    padding: 8px 15px;
+    border-radius: 10px;
+    font-weight: bolder;
+}
+
+.linkVaga:hover {
+    background-color: #2372c7;
+}
