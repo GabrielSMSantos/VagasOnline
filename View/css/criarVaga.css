@@ -9,7 +9,7 @@ main {
 
 form {
     width: 1050px;
-    min-height: 500px;
+    min-height: 650px;
     background-color: #fff;
     border: 1px solid #ccc;
     border-radius: 10px;
@@ -17,17 +17,12 @@ form {
     text-align: center;
     
 }
-    #tipoUsuario {
+    #dvTitulo {
         width: 100%;
-        height: 70px;
+        height: 40px;
         border-bottom: 1px solid #ccc;
         text-align: center;
     }
-
-        #tipoUsuario h2 {
-            margin-bottom: 10px;
-        }
-
         .OptionTipoUsuario {
             border: 1px solid #777;
             color: #777;    
@@ -56,7 +51,6 @@ form {
         }
 
         .inputFormulario {
-            width: 100%;
             padding: 5px 15px;
             font-size: 18px;
             border-radius: 10px;
@@ -93,6 +87,10 @@ form {
             margin-top: 35px;
         }
 
+            table p {
+                padding: 20px 5px;
+            }
+
             #palavrasChave {
                 max-width: 803px;
                 min-height: 35px;
@@ -121,29 +119,41 @@ form {
                 }
 
 
-            .palavraChave {
-                width: 138px;
-                height: 30px;
-                border: 0;
-                outline: none;
-                border-radius: 15px;
-                margin: 5px;
+                .palavraChave {
+                    width: 138px;
+                    height: 30px;
+                    border: 0;
+                    outline: none;
+                    border-radius: 15px;
+                    margin: 5px;
+                    padding: 5px 15px;
+                    outline: none;
+                    background-color: #2372c7;
+                    color: #fff;
+                }
+
+            .dropdown {
+                width: 100%;
                 padding: 5px 15px;
+                font-size: 18px;
+                border-radius: 10px;
+                border: 2px solid #ddd;
                 outline: none;
-                background-color: #2372c7;
-                color: #fff;
             }
 
-            #tblCandidato p {
-                padding: 20px 5px;
-            }
+            #sobreVaga {
+                max-width: 789px;
+                min-width: 789px;
+                max-height: 152px;
+                min-height: 152px;
+                border-radius: 10px;
+                border: 2px solid #ddd;
+                outline: none;
+                padding: 5px 15px;
+            }   
 
-            #tblEmpresa {
-                display: none;
-            }
-
-                #tblEmpresa p {
-                    padding: 5px 5px;
+                #sobreVaga:focus {
+                    border: 2px solid #999;
                 }
 
             #sobreEmpresa {

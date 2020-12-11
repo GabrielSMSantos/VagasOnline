@@ -1,16 +1,16 @@
 <?php 
 
-function CadastrarCandidato($nome, $dataNascimento, $cpf, $login, $senha) 
+function CadastrarCandidato($cpf, $nome, $dataNascimento, $interesses, $login, $senha) 
 {
     require_once "banco.php";
     
-    $dataCandidato = $conn->prepare("INSERT INTO candidato VALUES(:id , :nome, :dataNascimento, :cpf, :loginCandidato, :senha)"); 
+    $dataCandidato = $conn->prepare("INSERT INTO candidato VALUES(:cpf , :nome, :dataNascimento, :interesses, :loginCandidato, :senha)"); 
 
     $dataCandidato->execute(array(
-        ":id" => "",
+        ":cpf" => $cpf,
         ":nome" => $nome,
         ":dataNascimento" => $dataNascimento,
-        ":cpf" => $cpf,
+        ":interesses" => $interesses,
         ":loginCandidato" => $login,
         ":senha" => md5($senha)
     ));

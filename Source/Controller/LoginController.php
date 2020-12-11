@@ -13,11 +13,18 @@ if ($_POST) {
         $resultado = logarCandidato($login, $senha);
 
         if ($resultado) {
-            $_SESSION["id"] = $resultado["id_candidato"];
+            $_SESSION["id"] = $resultado["cpf_candidato"];
             $_SESSION["nome"] = $resultado["nome_candidato"];
+            $_SESSION["tipoUsuario"] = $_POST["chkTipoUsuario"];
+            $_SESSION["interesses"] = $resultado["interesses_candidato"];
+
+            header("Location: http://localhost/VagasOnline/index.php");
+
+        } else {
+            header("Location: http://localhost/VagasOnline/view/login.php");
         }
 
-        header("Location: http://localhost/VagasOnline/index.php");
+        
 
     } else {
 
@@ -26,9 +33,13 @@ if ($_POST) {
         if ($resultado) {
             $_SESSION["id"] = $resultado["id_empresa"];
             $_SESSION["nome"] = $resultado["nome_empresa"];
-        }
+            $_SESSION["tipoUsuario"] = $_POST["chkTipoUsuario"];
+            
+            header("Location: http://localhost/VagasOnline/index.php");
 
-        header("Location: http://localhost/VagasOnline/index.php");
+        } else {
+            header("Location: http://localhost/VagasOnline/view/login.php");
+        }
        
     }
     

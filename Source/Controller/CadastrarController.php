@@ -5,13 +5,14 @@ include "../Model/Cadastrar.php";
 if ($_POST) {
 
     if ($_POST["chkTipoUsuario"] == "Candidato") {
+        $cpf = $_POST["cpf"];
         $nomeCadidato = $_POST["nomeCandidato"];
         $dataNascimento = $_POST["dataNascimento"];
-        $cpf = $_POST["cpf"];
+        $interesses = $_POST["palavrasChave"];
         $loginCandidato = $_POST["loginCandidato"];
         $senhaCandidato = $_POST["senhaCandidato"];
 
-        CadastrarCandidato($nomeCadidato, $dataNascimento, $cpf, $loginCandidato, $senhaCandidato);
+        CadastrarCandidato($cpf, $nomeCadidato, $dataNascimento, $interesses, $loginCandidato, $senhaCandidato);
 
         echo "<script> window.location.href = 'http://localhost/VagasOnline/view/login.php'; <script>";
 

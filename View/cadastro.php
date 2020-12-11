@@ -33,21 +33,21 @@
                     <th>
                         <p class="campos">
                             <b>NOME DA EMPRESA</b><br>
-                            <input type="text" name="nomeEmpresa">
+                            <input class="inputFormulario" type="text" name="nomeEmpresa">
                         </p>
                     </th>
 
                     <th>
                         <p class="campos">
                             <b>ENDEREÇO</b><br>
-                            <input type="text" name="endereco">
+                            <input class="inputFormulario" type="text" name="endereco">
                         </p>
                     </th>
 
                     <th>
                         <p class="campos">
                             <b>CNPJ</b><br>
-                            <input type="text" name="cnpj">
+                            <input class="inputFormulario" type="text" name="cnpj">
                         </p>
                     </th>
                     
@@ -67,14 +67,14 @@
                     <th>
                         <p class="campos">
                             <b>LOGIN</b><br>
-                            <input type="text" name="loginEmpresa">
+                            <input class="inputFormulario" type="text" name="loginEmpresa">
                         </p>
                     </th>
 
                     <th>
                         <p class="campos">
                             <b>SENHA</b><br>
-                            <input type="password" name="senhaEmpresa">
+                            <input class="inputFormulario" type="password" name="senhaEmpresa">
                         </p>
                     </th>
                 </tr>
@@ -87,38 +87,51 @@
                     <th>
                         <p class="campos">
                             <b>NOME</b><br>
-                            <input type="text" name="nomeCandidato">
+                            <input class="inputFormulario" type="text" name="nomeCandidato">
                         </p>
                     </th>
 
                     <th>
                         <p class="campos">
                             <b>DATA DE NASCIMENTO</b><br>
-                            <input type="date" name="dataNascimento" style="max-height: 35px;">
+                            <input class="inputFormulario" type="date" name="dataNascimento" style="max-height: 35px;">
                         </p>
                     </th>
 
                     <th>
                         <p class="campos">
                             <b>CPF</b><br>
-                            <input type="text" name="cpf">
+                            <input class="inputFormulario" type="text" name="cpf">
                         </p>
                     </th>
                     
                 </tr>
 
                 <tr>
+
+                    <th colspan="3" style="text-align: left;">
+                        <label class="campos">
+                            <b>PALAVRAS-CHAVE (Informe seus interesses)</b>
+                            <div id="palavrasChave">
+                                <b id="addPalavraChave" onclick="criarPalavraChave()">+</b>
+                            </div>
+                            <input id="inputPalavraChave" type="text" name="palavrasChave" style="display: none;">
+                        </label>
+                    </th>
+                </tr>
+
+                <tr>
                     <th>
                         <p class="campos">
                             <b>LOGIN</b><br>
-                            <input type="text" name="loginCandidato">
+                            <input class="inputFormulario" type="text" name="loginCandidato">
                         </p>
                     </th>
 
                     <th>
                         <p class="campos">
                             <b>SENHA</b><br>
-                            <input type="password" name="senhaCandidato">
+                            <input class="inputFormulario" type="password" name="senhaCandidato">
                         </p>
                     </th>
                 </tr>
@@ -152,6 +165,31 @@
 
             }
             
+        }
+
+
+        
+        var posicaoPalavraChave = 0;
+        var palavrasChaves = [];
+
+        function criarPalavraChave() {
+            var divPalavrasChave = document.querySelector("#palavrasChave");
+
+            var palavraChave = document.createElement("INPUT");
+            palavraChave.setAttribute("type", "text");
+            palavraChave.setAttribute("id", posicaoPalavraChave);
+            palavraChave.setAttribute("class", "palavraChave");
+            palavraChave.setAttribute("onkeyup", "pegarValor(this)");
+
+            divPalavrasChave.appendChild(palavraChave);
+            posicaoPalavraChave++;
+        }
+
+
+        function pegarValor(element) {
+            palavrasChaves[element.id] = element.value;
+
+            document.getElementById("inputPalavraChave").value = palavrasChaves.toString();
         }
 
     </script>

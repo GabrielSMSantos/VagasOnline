@@ -4,18 +4,29 @@ main {
     background-color: #FAFAFA;
 }
 
+#cards {
+    display: flex;
+    flex-wrap: wrap;
+}
 
 .vaga {
+    box-sizing: content-box;
     position: relative;
-    display: inline-block;
     width: 500px;
-    height: 250px;
+    height: 272px;
     border: 1px solid #ececec;
     border-radius: 10px;
     background-color: #fff;
     padding: 10px;
     margin: 15px 15px 0 0;
 }
+    .divisao {
+        width: 150px;
+        height: 3px;
+        border-radius: 10px;
+        background-color: #000;
+        margin-top: 5px;
+    }
 
     .nomeVaga {
         color: #175fac;
@@ -23,6 +34,8 @@ main {
     }
 
     .descricaoVaga {
+        max-height: 150px;
+        overflow: hidden;
         color: rgb(105, 105, 105);
     }
 
