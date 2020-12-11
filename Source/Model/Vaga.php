@@ -58,12 +58,25 @@ function BuscarVaga($id)
     return $dataBuscar->fetch();
 }
 
-function getEmpresa($id)
+
+function CandidatarSe($idVaga, $cpfCandidato)
 {
     include "banco.php";
 
-    $dataNomeEmpresa = $conn->query("SELECT * FROM empresa WHERE id_empresa =".$id);
-    $dataNomeEmpresa->execute();
+    $dataCandidatarSe = $conn->prepare("INSERT INTO inscritos_vaga VALUE(:idInscricao, :idVaga, :cpfCandidato)");
+
+    $dataCandidatarSe->execute(array(
+       ":idInscricao" => '',
+       ":idVaga" => $idVaga,
+       ":cpfCandidato" => $cpfCandidato 
+    ));    
+}
+
+
+function VerificarInscricao($cpfCandidato){
+    include "banco.php";
+
+    $dataIncricao = $conn->query("SELECT cpf_candidato FROM inscritos_vaga WHERE cpf_candidato = '$cpfCandidato'");
     
-    return $dataNomeEmpresa->fetch();
+    return $dataIncricao->execute();
 }

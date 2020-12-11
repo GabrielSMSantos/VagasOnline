@@ -40,7 +40,7 @@
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    width: 500px;
+    width: 45%;
     min-height: 272px;
     border: 1px solid #ececec;
     border-radius: 10px;
@@ -50,13 +50,33 @@
     margin: 1rem 1rem 0 0;
 }
 
+#nomeEmpresa {
+    color: #888;
+}
+
+#salario {
+    color: #555;
+}
+
+    #salario b{
+        color: #02a102;
+    }
+
+#vagasDisponiveis {
+    font-weight: bolder;
+    color: #444;
+}
+
 .nomeVaga {
     color: #175fac;
-    margin-bottom: 1rem;
+    margin-bottom: 0.2rem;
 }
 
 .descricaoVaga {
     color: rgb(105, 105, 105);
+    max-height: 100px;
+    overflow: hidden;
+    margin-top: 1rem;
 }
 
 .linkVaga {

@@ -1,0 +1,65 @@
+
+main {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 30px 4%;
+    background-color: #fafafa;
+}
+
+
+#msgEnviadasRecebidas{
+    width: 100%;
+    min-height: 550px;
+    max-height: 550px;
+    background-color: #fff;
+    border: 2px solid #ccc;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    padding: 35px;
+    overflow: auto;
+}
+
+.mensagem {
+    display: flex;
+}
+    .recebida {
+        justify-content: flex-start;
+    }
+
+    .enviada {
+        justify-content: flex-end;
+    }
+
+    .msgRecebida {
+        padding: 5px 10px;
+        background: #eee;
+        color: #555;
+        border-bottom-left-radius: 10px;
+        border-bottom-right-radius: 10px;
+        border-top-right-radius: 10px;
+        margin-bottom: 8px;
+        text-align: left;
+    }
+
+    .msgEnviada {
+        padding: 5px 10px;
+        background: rgba(23, 95, 172, 0.2);
+        color: #175fac;
+        border-bottom-left-radius: 10px;
+        border-bottom-right-radius: 10px;
+        border-top-left-radius: 10px;
+        margin-bottom: 8px;
+        text-align: right;
+    }
+
+#inputMensagem {
+    width: 100%;
+    border-bottom: 2px solid #ccc;
+    border-left: 2px solid #ccc;
+    border-right: 2px solid #ccc;
+    border-top: none;
+    height: 50px;
+    padding: 10px 30px;
+    font-size: 20px;
+    resize: none;
+}

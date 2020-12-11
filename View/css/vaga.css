@@ -45,8 +45,27 @@ main {
                     background: rgba(23, 94, 171, 1);
                 }
 
+        #salario {
+            margin-top: 1.5rem;
+            color: #555;
+        }
+
+            #salario b{
+                color: #02a102;
+            }
+
+        #regiao {
+            color: #555;
+        }
+
+        #vagasDisponiveis {
+            font-weight: bolder;
+            color: #444;
+        }
+
         #descricaoVaga {
             margin-top: 25px;
+            color: #000;
         }
 
         #linkCandidatarSe {
@@ -60,6 +79,9 @@ main {
             border-radius: 10px;
             text-decoration: none;
             font-weight: bolder;
+            outline: none;
+            border: none;
+            font-size: 16px;
         }
             #linkCandidatarSe img {
                 margin-left: 10px;
@@ -69,10 +91,16 @@ main {
                 background-color: #2372c7;
             }
 
+            #linkCandidatarSe:disabled {
+                cursor: not-allowed;
+                opacity: 0.5;
+            }
+
 
     #empresa {
+        box-sizing: content-box;
         width: 30%;
-        height: 300px;
+        min-height: 300px;
         border: 1px solid #ccc;
         border-radius: 10px;
         padding: 10px;
@@ -95,3 +123,21 @@ main {
         #enderecoEmpresa {
             margin-top: 15px;
         }
+
+        #enviarMensagem {
+            padding: 10px;
+            margin-top: 2rem;
+            border-radius: 10px;
+            border: 2px solid #175fac;
+            text-decoration: none;
+            color: #175fac;
+            background-color: #fff;
+            font-size: 18px;
+            font-weight: bolder;
+            transition: background-color 130ms linear, color 130ms linear;
+        }
+
+            #enviarMensagem:hover {
+                background-color: #175fac;
+                color: #fff;
+            }

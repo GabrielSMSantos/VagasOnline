@@ -29,31 +29,9 @@
             </div>
 
             <div class="wrapper">
-                <div class="vaga">
-                    <div class="dadosVaga">
-                        <h2 class="nomeVaga">Empresa</h2>
-                        <p class="descricaoVaga">
-                        Lorem Ipsum is simply dummy text of the printing and typesetting industry. 
-                        Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, 
-                        when an unknown printer took a galley of type and scrambled it to make a type specimen book.
-                        </p>
-                    </div>
-
-                    <a class="linkVaga" href="http://localhost/VagasOnline/view/vaga.php">Conhecer Empresa</a>
-                </div>
-
-                <div class="vaga">
-                    <div class="dadosVaga">
-                        <h2 class="nomeVaga">Empresa</h2>
-                        <p class="descricaoVaga">
-                        Lorem Ipsum is simply dummy text of the printing and typesetting industry. 
-                        Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, 
-                        when an unknown printer took a galley of type and scrambled it to make a type specimen book.
-                        </p>
-                    </div>
-
-                    <a class="linkVaga" href="http://localhost/VagasOnline/view/vaga.php">Conhecer Empresa</a>
-                </div>
+                <?php include "Source/Controller/EmpresaController.php"; 
+                      getTodasEmpresas();
+                ?>                
             </div>
         </div>
 

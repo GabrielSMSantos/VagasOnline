@@ -1,4 +1,6 @@
 <?php include "../Source/Model/Vaga.php"; 
+      include "../Source/Model/Empresa.php";
+
     if(isset($_GET)){
         $vaga = BuscarVaga($_GET["id"]);
     }
@@ -38,12 +40,31 @@
                 
             </p>
 
+            <p id="salario">
+                Salário: <b> R$ <?= number_format($vaga[3], 2, ",", "."); ?></b>
+            </p>
+
+            <p id="regiao">
+                Região: <?= $vaga[5]; ?>
+            </p>
+
+            <p id="vagasDisponiveis">
+                Vagas Disponíveis: <?= $vaga[10]; ?>
+            </p>
+
             <p id="descricaoVaga">
                 <?= $vaga[6]; ?>
             </p>
             <br><br>
 
-            <a id="linkCandidatarSe" href="#">CANDIDATAR-SE  <img src="http://localhost/VagasOnline/media/iconCandidatarSe.png"></a>
+            <button type="button" id="linkCandidatarSe" onclick="<?= (isset($_SESSION["id"]) && VerificarInscricao($_SESSION["id"])) ? "" : 
+                                            "window.location.href = 'http://localhost/VagasOnline/Source/Controller/CandidatarSeController.php?idVaga=".$_GET['id']."'" ?>"
+                                            <?= (isset($_SESSION["id"]) && VerificarInscricao($_SESSION["id"])) ? 'disabled' : "" ?>>
+
+                      
+                    <?= (isset($_SESSION["id"]) && VerificarInscricao($_SESSION["id"])) ? "VAGA CANDIDATADA" : 'CANDIDATAR-SE <img src="http://localhost/VagasOnline/media/iconCandidatarSe.png">'; ?>
+
+            </button>
         </div>
 
 
@@ -55,10 +76,14 @@
                 <?= $empresa["sobre_empresa"]; ?>                
             </p>
 
+            <br><br>
+
+            <?= (isset($_SESSION["id"]) && VerificarInscricao($_SESSION["id"])) ? '<a id="enviarMensagem" href="http://localhost/VagasOnline/view/mensagens.php">Enviar mensagem para empresa</a>' : "" ?>
 
         </div>
     </main>
     
     <?php include "footer.php"; ?>
+
 </body>
 </html>
