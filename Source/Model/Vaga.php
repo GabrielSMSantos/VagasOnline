@@ -1,8 +1,9 @@
 <?php
 
 function CadastrarVaga($nomeVaga, $salario, $regimeContratacao, $regiao, $sobreVaga, $numMax, $categoria, $palavrasChave, $numVagasDisponivel) 
-{
+{    
     include "banco.php";
+    session_start();
     
     $dataVaga = $conn->prepare("INSERT INTO vaga VALUES(:id_vaga, :id_empresa, :nomeVaga, :salario, :regimeContratacao, :regiao, 
                                                         :sobreVaga, :numMax, :categoria, :palavrasChave, :numVagasDisponivel)");
@@ -20,6 +21,7 @@ function CadastrarVaga($nomeVaga, $salario, $regimeContratacao, $regiao, $sobreV
         ":palavrasChave" => $palavrasChave,
         ":numVagasDisponivel" => $numVagasDisponivel
     ));
+
 }
 
 
@@ -73,10 +75,24 @@ function CandidatarSe($idVaga, $cpfCandidato)
 }
 
 
-function VerificarInscricao($cpfCandidato){
+function VerificarInscricao($cpfCandidato, $idVaga)
+{
     include "banco.php";
 
-    $dataIncricao = $conn->query("SELECT cpf_candidato FROM inscritos_vaga WHERE cpf_candidato = '$cpfCandidato'");
+    $dataIncricao = $conn->query("SELECT cpf_candidato FROM inscritos_vaga WHERE cpf_candidato = '$cpfCandidato' AND id_vaga =".$idVaga);
     
-    return $dataIncricao->execute();
+    return $dataIncricao->fetch();
+}
+
+
+function VerificarNumInscricoes($idVaga)
+{
+    include "banco.php";
+
+    $dataVerificarNumInscricoes = $conn->query("SELECT * FROM inscritos_vaga WHERE id_vaga =".$idVaga);
+    $dataVerificarNumInscricoes->execute();
+
+    $numInscricoes = $dataVerificarNumInscricoes->fetchAll();
+
+    return count($numInscricoes);
 }

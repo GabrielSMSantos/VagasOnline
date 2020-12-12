@@ -184,7 +184,7 @@
                 <?php 
                     if ($_SESSION["tipoUsuario"] == "Candidato"):
                 ?>
-                <a href="#">Perfil</a>
+                <a href="http://localhost/VagasOnline/view/perfil.php?id=<?= (isset($_SESSION["id"])) ? $_SESSION["id"] : "" ?>">Perfil</a>
                 <a href="#">Incrições</a>
                 <a href="#">Meu Currículo</a>
                 <a href="http://localhost/VagasOnline/Source/Controller/Logout.php">Sair</a>
@@ -192,7 +192,7 @@
                 <?php
                     else:
                 ?>
-                    <a href="#">Perfil</a>
+                    <a href="http://localhost/VagasOnline/view/perfil.php?id=<?= (isset($_SESSION["id"])) ? $_SESSION["id"] : "" ?>">Perfil</a>
                     <a href="http://localhost/VagasOnline/view/criarVaga.php">Criar Nova Vaga</a>
                     <a href="#">Mensagens</a>
                     <a href="http://localhost/VagasOnline/Source/Controller/Logout.php">Sair</a>

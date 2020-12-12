@@ -6,6 +6,10 @@ main {
     background-color: #fafafa;
 }
 
+form {
+    position: relative;
+}
+
 
 #msgEnviadasRecebidas{
     width: 100%;
@@ -22,11 +26,11 @@ main {
 .mensagem {
     display: flex;
 }
-    .recebida {
+    .Recebida {
         justify-content: flex-start;
     }
 
-    .enviada {
+    .Enviada {
         justify-content: flex-end;
     }
 
@@ -63,3 +67,20 @@ main {
     font-size: 20px;
     resize: none;
 }
+
+
+    #btnEnviarMensagem {
+        position: absolute;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 45px;
+        height: 38px;
+        background-color: #175fac;
+        border: 0;
+        outline: none;
+        top: 5px;
+        right: 25px;
+        border-radius: 50%;
+        cursor: pointer;
+    }

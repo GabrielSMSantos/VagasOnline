@@ -82,6 +82,7 @@ main {
             outline: none;
             border: none;
             font-size: 16px;
+            cursor: pointer;
         }
             #linkCandidatarSe img {
                 margin-left: 10px;
@@ -141,3 +142,48 @@ main {
                 background-color: #175fac;
                 color: #fff;
             }
+
+    #CandidatosInscritos {
+        border-top: 1px solid #ccc;
+        padding-top: 15px;
+    }
+        #CandidatosInscritos h3 {
+            position: relative;
+            margin-bottom: 35px;
+        }
+
+        #CandidatosInscritos h3::after {
+            left: 0;
+            bottom: -5px;
+            content: "";
+            position: absolute;
+            width: 10vw;
+            height: 2px;
+            background-color: #000;
+        }
+
+        .dadosCandidato {
+            padding: 5px 20px;
+            height: 50px;
+            margin: 0;
+            border-left: 1px solid #ccc;
+            border-bottom: 1px solid #ccc;
+            /* background-color: #f00; */
+        }
+
+        .btnEnviarMsg {
+            margin-left: 10%;
+            background-color: #257cda;
+            border: 1px solid #257cda;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 10px;
+            padding: 10px 20px;
+        }
+
+        #nenhumCandidato {
+            padding: 5px 20px;
+            height: 50px;
+            text-transform: uppercase;
+            color: #555;
+        }

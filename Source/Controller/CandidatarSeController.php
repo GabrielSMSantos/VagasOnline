@@ -10,4 +10,4 @@ session_start();
         CandidatarSe($idVaga, $cpfCandidato);
     }
     
-    header("Location: ../view/vaga.php");
+    header("Location: http://localhost/VagasOnline/view/vaga.php?id=".$idVaga);

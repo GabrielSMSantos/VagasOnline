@@ -17,4 +17,5 @@ if ($_POST) {
 
     CadastrarVaga($nomeVaga, $salario, $regimeContratacao, $regiao, $sobreVaga, $numMax, $categoria, $palavrasChave, $numVagasDisponivel);
     
+    header("Location: http://localhost/VagasOnline/index.php");
 }

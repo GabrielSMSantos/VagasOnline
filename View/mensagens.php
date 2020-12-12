@@ -13,22 +13,28 @@
     <main>
 
         <div id="msgEnviadasRecebidas">
-            <p class="mensagem recebida"><b class="msgRecebida">Lorem Ipsum Dolor Ipsum</b></p>
-            <p class="mensagem enviada"><b class="msgEnviada">remaining essentially unchanged.</b></p>
-            <p class="mensagem enviada"><b class="msgEnviada">web sites still in their infancy. Various versions have evolved over the years, sometimes</b></p>
-            <p class="mensagem recebida"><b class="msgRecebida">or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum</b></p>
-            <p class="mensagem recebida"><b class="msgRecebida">All the Lorem Ipsum generators on the Internet tend to repeat predefined chunks as necessary</b></p>
-            <p class="mensagem recebida"><b class="msgRecebida">or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum</b></p>
-            <p class="mensagem recebida"><b class="msgRecebida">All the Lorem Ipsum generators on the Internet tend to repeat predefined chunks as necessary</b></p>
-            <p class="mensagem enviada"><b class="msgEnviada">remaining essentially unchanged.</b></p>
-            <p class="mensagem enviada"><b class="msgEnviada">web sites still in their infancy. Various versions have evolved over the years, sometimes</b></p>
-            <p class="mensagem enviada"><b class="msgEnviada">remaining essentially unchanged.</b></p>
-            <p class="mensagem enviada"><b class="msgEnviada">web sites still in their infancy. Various versions have evolved over the years, sometimes</b></p>
-            <p class="mensagem enviada"><b class="msgEnviada">remaining essentially unchanged.</b></p>
+            <?php include "../Source/Controller/ExibirMensagens.php"; ?>
         </div>
 
-        <textarea name="inputMensagem" id="inputMensagem" cols="30" placeholder="Digite uma Mensagem" row="1" oninput="aumentarAltura(this)"></textarea>
-        
+        <?php
+                if (isset($_SESSION["tipoUsuario"])) {
+                    
+                    if($_SESSION["tipoUsuario"] == "Candidato"){
+                        echo '<form style="width:100%;" action="http://localhost/VagasOnline/Source/Controller/MensagensController.php?idEmpresa='.$_GET["idEmpresa"].'&idVaga='.$_GET["idVaga"].'" method="post">';
+                        
+                    } else {
+                        echo '<form style="width:100%;" action="http://localhost/VagasOnline/Source/Controller/MensagensController.php?cpfCandidato='.$_GET["cpfCandidato"].'&idVaga='.$_GET["idVaga"].'" method="post">';
+                    }                    
+
+                }  else {
+                    echo '<form style="width:100%;" action="" method="post">';
+                } 
+                
+            ?>
+
+            <textarea name="inputMensagem" id="inputMensagem" cols="30" placeholder="Digite uma Mensagem" row="1" oninput="aumentarAltura(this)"></textarea>
+            <button id="btnEnviarMensagem" type="submit"><img src="http://localhost/VagasOnline/media/iconEnviarMensagem.png"></button>
+        </form>
     </main>
     
     <?php include "footer.php"; ?>

@@ -20,3 +20,24 @@ function BuscarEmpresas()
     return $dataBuscarEmpresas->fetchAll();
 }
 
+
+function VagasCriadas($idEmpresa)
+{
+    include "banco.php";
+
+    $dataEmpresa = $conn->query("SELECT * FROM vaga WHERE id_empresa =".$idEmpresa);
+    $dataEmpresa->execute();
+
+    return $dataEmpresa->fetchAll();
+}
+
+
+function CandidatosIncritosNaVaga($idVaga)
+{
+    include "banco.php";
+
+    $dataCandidatosInscritos = $conn->query("SELECT * FROM inscritos_vaga WHERE id_vaga =".$idVaga);
+    $dataCandidatosInscritos->execute();
+
+    return $dataCandidatosInscritos->fetchAll();    
+}

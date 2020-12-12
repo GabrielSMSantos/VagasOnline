@@ -35,7 +35,20 @@
             </div>
         </div>
 
-            <?php endif; ?>
+        <?php 
+            else:
+        ?>
+                <div class="wrapperTitle">
+                    <h1>Vagas Criadas</h1>
+                </div>
+
+                <div class="wrapper">
+                    <?php include "Source/Controller/VagasCriadasPelaEmpresa.php"; ?>
+                </div>
+
+        <?php  
+            endif; 
+        ?>
 
     </main>
 
