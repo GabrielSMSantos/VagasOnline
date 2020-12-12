@@ -11,7 +11,7 @@
 
 
     <main>
-        <form action="http://localhost/VagasOnline/Source/Controller/CadastrarController.php" method="post">
+        <form id="formCadastro" action="http://localhost/VagasOnline/Source/Controller/CadastrarController.php" method="post">
             <div id="tipoUsuario">
                 <h2>Cadastrar como</h2>
 

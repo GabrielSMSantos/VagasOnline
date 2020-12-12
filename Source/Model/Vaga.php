@@ -50,6 +50,16 @@ function BuscarVagaComInteresses($interesses)
     return $dataInteresses->fetchAll();
 }
 
+function BuscarTodasVagas()
+{
+    include "banco.php";
+
+    $dataBuscarTodasVagas = $conn->query("SELECT * FROM vaga");
+    $dataBuscarTodasVagas->execute();
+
+    return $dataBuscarTodasVagas->fetchAll();
+}
+
 
 function BuscarVaga($id) 
 {
@@ -58,6 +68,41 @@ function BuscarVaga($id)
     $dataBuscar = $conn->query("SELECT * FROM vaga WHERE id_vaga =".$id);
     
     return $dataBuscar->fetch();
+}
+
+function PesquisarVaga($palavraChave)
+{
+    include "banco.php";
+
+    $dataPesquisarVaga = $conn->query("SELECT * FROM vaga WHERE palavrasChave_vaga LIKE '%$palavraChave%'");
+    $dataPesquisarVaga->execute();
+    
+    return $dataPesquisarVaga->fetchAll();
+}
+
+
+function EditarDadosVaga($nomeVaga, $numMax, $numVagasDisponivel, $salario, $regiao, $regimeContratacao, $palavrasChave, $categoria, $sobreVaga, $idVaga)
+{
+    include "banco.php";
+
+    $dataEditarDadosVaga = $conn->prepare("UPDATE vaga SET nome_vaga = :nome_vaga, maxInscritos_vaga = :maxInscritos_vaga,
+                                           qntVagasDisponivel_vaga = :qntVagasDisponivel_vaga, salario_vaga = :salario_vaga,
+                                           regiao_vaga = :regiao_vaga, regimeContratacao_vaga = :regimeContratacao_vaga, 
+                                           palavrasChave_vaga = :palavrasChave_vaga, categoria_vaga = :categoria_vaga, exigencias_vaga = :exigencias_vaga
+                                           WHERE id_vaga = :id_vaga");
+
+    return $dataEditarDadosVaga->execute(array(
+        ":nome_vaga" => $nomeVaga,
+        ":maxInscritos_vaga" => $numMax,
+        ":qntVagasDisponivel_vaga" => $numVagasDisponivel,
+        ":salario_vaga" => $salario,
+        ":regiao_vaga" => $regiao,
+        ":regimeContratacao_vaga" => $regimeContratacao,
+        ":palavrasChave_vaga" => $palavrasChave,
+        ":categoria_vaga" => $categoria,
+        ":exigencias_vaga" => $sobreVaga,
+        ":id_vaga" => $idVaga
+    ));
 }
 
 

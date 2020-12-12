@@ -11,7 +11,7 @@
 
 
     <main>
-        <form action="http://localhost/VagasOnline/Source/Controller/CadastrarVagaController.php" method="post">
+        <form id="containerVaga" action="http://localhost/VagasOnline/Source/Controller/CadastrarVagaController.php" method="post">
             <div id="dvTitulo">
                 <h2>Criar Nova Vaga</h2>
             </div>

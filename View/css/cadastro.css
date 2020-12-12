@@ -7,7 +7,7 @@ main {
     padding: 5% 0;
 }
 
-form {
+#formCadastro {
     width: 1050px;
     min-height: 500px;
     background-color: #fff;
@@ -47,7 +47,7 @@ form {
             color: #fff;
         }
 
-    form p {
+    #formCadastro p {
         text-align: left;
         width: 100%;
     }

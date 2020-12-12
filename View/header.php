@@ -161,7 +161,7 @@
         <a id="logo" href="http://localhost/VagasOnline/index.php"><img width="150" src="https://upload.wikimedia.org/wikipedia/commons/3/35/Logo-catho.png" alt="logo"></a>
         <ul>
             <li><a href="http://localhost/VagasOnline/index.php">Tela Inicial</a></li>
-            <li><a href="#">Buscar Vagas</a></li>
+            <li><a href="http://localhost/VagasOnline/view/listaVagas.php">Vagas</a></li>
             <li><a href="#">Empresas</a></li>
         </ul>
 
@@ -212,8 +212,8 @@
 
 </header>
 
-<div id="campoPesquisa">
+<form action="http://localhost/VagasOnline/view/listaVagas.php" method="post" id="campoPesquisa">
     <b>Procure Por Vagas:</b>
-    <input type="text" name="inputPesquisa">
+    <input type="text" name="pesquisa">
     <!-- <img src="http://localhost/VagasOnline/media/iconSearch.png"> -->
-</div>
+</form>

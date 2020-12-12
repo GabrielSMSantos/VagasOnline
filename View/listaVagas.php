@@ -13,64 +13,50 @@
     
     <main id="listaVagas">
       <div class="container">
-        <div class="textTitle">
+        <div class="wrapperTitle">
           <h1>Lista de vagas</h1>
         </div>
+        
+        <div class="wrapper">
+          <?php include "../Source/Controller/listaVagasController.php"; 
 
-        <div class="content">
-          <div class="vaga">
-            <div class="dadosVaga">
-              <h2 class="nomeVaga">Empresa</h2>
-              <p class="descricaoVaga">
-              Lorem Ipsum is simply dummy text of the printing and typesetting industry. 
-              Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, 
-              when an unknown printer took a galley of type and scrambled it to make a type specimen book.
-              </p>
-            </div>
+              if ($resultado){
+                foreach($resultado as $vaga) {
+                  $nomeEmpresa = getEmpresa($vaga[1]);
+                  $verificarNumIncricoes = VerificarNumInscricoes($vaga[0]);
 
-            <a class="linkVaga" href="http://localhost/VagasOnline/view/vaga.php">Conhecer Empresa</a>
-          </div>
-          
-          <div class="vaga">
-            <div class="dadosVaga">
-              <h2 class="nomeVaga">Empresa</h2>
-              <p class="descricaoVaga">
-              Lorem Ipsum is simply dummy text of the printing and typesetting industry. 
-              Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, 
-              when an unknown printer took a galley of type and scrambled it to make a type specimen book.
-              </p>
-            </div>
+                  if ($verificarNumIncricoes < $vaga[7]) {
+                      echo '
+                          <div class="vaga">
+                              <div class="dadosVaga">
+                                  <h2 class="nomeVaga">'.$vaga[2].'</h2>
+                                  <b id="nomeEmpresa">'.$nomeEmpresa["nome_empresa"].'</b>
+                                  <p id="salario">Salário: <b>R$ '.number_format($vaga[3], 2, ",", ".").'</b></p>
+                                  <p id="vagasDisponiveis">Vagas Disponíveis: '.$vaga[10].'</p>
+                                  <p class="descricaoVaga">
+                                      '.$vaga[6].'
+                                  </p>
+                              </div>
 
-            <a class="linkVaga" href="http://localhost/VagasOnline/view/vaga.php">Conhecer Empresa</a>
-          </div>
+                              <a class="linkVaga" href="http://localhost/VagasOnline/view/vaga.php?id='.$vaga[0].'">Visualizar Vaga</a>
+                          </div>
+                      
+                      ';
+                  }
+                }
 
-          <div class="vaga">
-            <div class="dadosVaga">
-              <h2 class="nomeVaga">Empresa</h2>
-              <p class="descricaoVaga">
-              Lorem Ipsum is simply dummy text of the printing and typesetting industry. 
-              Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, 
-              when an unknown printer took a galley of type and scrambled it to make a type specimen book.
-              </p>
-            </div>
+              } else {
+                 echo '
+                    <div class="AlertaSemConteudo">
+                        <h1>Nenhuma Vaga Cadastrada</h1>
+                    </div>
+                 ';
+              }
 
-            <a class="linkVaga" href="http://localhost/VagasOnline/view/vaga.php">Conhecer Empresa</a>
-          </div>
+                
 
-          <div class="vaga">
-            <div class="dadosVaga">
-              <h2 class="nomeVaga">Empresa</h2>
-              <p class="descricaoVaga">
-              Lorem Ipsum is simply dummy text of the printing and typesetting industry. 
-              Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, 
-              when an unknown printer took a galley of type and scrambled it to make a type specimen book.
-              </p>
-            </div>
-
-            <a class="linkVaga" href="http://localhost/VagasOnline/view/vaga.php">Conhecer Empresa</a>
-          </div>
-        </div>
-      </div>
+          ?>
+        
     </main>
 
     <?php include "footer.php"; ?>

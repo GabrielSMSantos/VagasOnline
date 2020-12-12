@@ -14,7 +14,8 @@ if ($_POST) {
 
         CadastrarCandidato($cpf, $nomeCadidato, $dataNascimento, $interesses, $loginCandidato, $senhaCandidato);
 
-        echo "<script> window.location.href = 'http://localhost/VagasOnline/view/login.php'; <script>";
+        
+        header("Location: http://localhost/VagasOnline/view/login.php");
 
     } else {
         $nomeEmpresa = $_POST["nomeEmpresa"];
@@ -26,8 +27,7 @@ if ($_POST) {
         
         CadastrarEmpresa($nomeEmpresa, $endereco, $cnpj, $sobre, $loginEmpresa, $senhaEmpresa);
 
-        echo "<script> window.location.href = 'http://localhost/VagasOnline/view/login.php'; <script>";
-        
+        header("Location: http://localhost/VagasOnline/view/login.php");
     }
         
        

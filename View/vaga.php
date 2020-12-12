@@ -24,6 +24,13 @@
 
     <main>
         <div id="vaga" <?= (isset($_SESSION["tipoUsuario"]) && $_SESSION["tipoUsuario"] == "Empresa") ? 'style="width: 100%;"' : "" ?>>
+
+            <?php
+                if(isset($_SESSION["tipoUsuario"]) && $_SESSION["tipoUsuario"] == "Empresa" && $vaga["id_empresa"] == $_SESSION["id"]){
+                    echo '<a id="btnEditarVaga" href="http://localhost/VagasOnline/view/editarVaga.php?id='.$_GET["id"].'">Editar Vaga</a>';
+                }
+            ?>
+        
             <h1 id="nomeVaga"><?= $vaga[2]; ?></h1>
             <b id="nomeEmpresa"><img src="http://localhost/VagasOnline/media/iconEmpresa_Small.png" align="left"><?= $empresa["nome_empresa"]; ?></b>
             

@@ -41,3 +41,23 @@ function CandidatosIncritosNaVaga($idVaga)
 
     return $dataCandidatosInscritos->fetchAll();    
 }
+
+
+
+function AlterarDadosPerfilEmpresa($nome, $cnpj, $endereco, $sobre, $login, $idEmpresa)
+{
+    include "banco.php";
+
+    $dataAlterarDados = $conn->prepare("UPDATE empresa SET nome_empresa = :nome, cnpj_empresa = :cnpj,
+                                        endereco_empresa = :endereco, sobre_empresa = :sobre, login_empresa = :loginEmpresa
+                                        WHERE id_empresa = :idEmpresa");
+    
+    return $dataAlterarDados->execute(array(
+        ":nome" => $nome,
+        ":cnpj" => $cnpj,
+        ":endereco" => $endereco,
+        ":sobre" => $sobre,
+        ":loginEmpresa" => $login,
+        ":idEmpresa" => $idEmpresa
+    ));
+}

@@ -1,15 +1,13 @@
-
-#root {
+#listaVagas {
     width: 100%;
     padding: 0 10vw;
     background-color: #FAFAFA;
 }
 
-#root .container {
+#listaVagas .container {
     display: flex;
     flex-direction: column;
 }
-
 
 .wrapperTitle {
     margin-top: 1rem;
@@ -34,9 +32,7 @@
     align-items: center;
 }
 
-
 .vaga {
-    position: relative;
     box-sizing: content-box;
     display: flex;
     flex-direction: column;
@@ -97,19 +93,8 @@
 }
 
 
+
 .AlertaSemConteudo {
     padding: 100px;
     color: #999;
-}
-
-.btnEditarVaga{
-    position: absolute;
-    top: 15px;
-    right: 15px;
-    background-color: #257cda;
-    padding: 5px 10px;
-    color: #fff;
-    border-radius: 10px;
-    text-decoration: none;
-    font-weight: bolder;
 }

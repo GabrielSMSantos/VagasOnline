@@ -9,180 +9,149 @@ main {
   CONTAINER CANDIDATO
 */
 
-
-.containerCandidato {
-  display: none;
-  flex-direction: column;
-  align-items: center;
-}
-
-
-.dadosTexto {
-  position: relative;
-}
-
-
-.dadosTexto::after {
-  position: absolute;
-  bottom: -0.5rem;
-  content: "";
-  height: 1px;
-  width: 40vw;
-  background-color: rgb(218, 218, 218);
-}
-
-
-.dadosPessoais {
-  width: 80vw;
-  display: flex;
-  flex-direction: column;
-}
-
-
-.dadosContent {
-  margin-top: 1rem;
-}
-
-
-.flex {
-  display: flex;
-  flex-direction: column;
-}
-
-
-.wrapperDados {
-  display: flex;
-}
-
-
-.textLbl {
-  margin-bottom: 0.5rem;
-}
-
-
-.textInpt {
-  padding: 4px;
-  font-size: 1rem;
-  max-width: 206.4px;
-}
-
-
-.font-11 {
-  font-size: 1.1rem;
-}
-
-
-.inptBorder {
+#container {
+  width: 1050px;
+  min-height: 650px;
+  background-color: #fff;
+  border: 1px solid #ccc;
   border-radius: 10px;
-  border: 2px solid #ddd;
-  outline: none;
+  padding: 15px;
+  text-align: center;
 }
 
-
-.formulario {
-  margin-left: 1rem;
-}
-
-
-.inputFormulario {
+#headerTitle {
   width: 100%;
-  padding: 5px 15px;
-  font-size: 18px;
-  border-radius: 10px;
-  border: 2px solid #ddd;
-  outline: none;
+  height: 45px;
+  border-bottom: 1px solid #ccc;
+  text-align: center;
 }
 
+  .OptionTipoUsuario {
+      border: 1px solid #777;
+      color: #777;    
+      margin: 0 5px;
+      padding: 5px 20px;
+      border-radius: 10px;
+      cursor: pointer;
+  }
 
-.dadosLogin {
-  width: 80vw;
-  margin-top: 1.8rem;
+  .radioTipo {
+      display: none;
+  }
+
+  .radioTipo:checked ~ .OptionTipoUsuario {
+      background-color: #175fac;
+      border: 1px solid #175fac;
+      color: #fff;
+  }
+
+#container p {
+  text-align: left;
+  width: 100%;
 }
+  .campos {
+      color: #777;
+  }
+
+  .inputFormulario {
+      width: 100%;
+      padding: 5px 15px;
+      font-size: 18px;
+      border-radius: 10px;
+      border: 2px solid #ddd;
+      outline: none;
+  }
+      
+      .inputFormulario:focus {
+          border: 2px solid #999;
+      }
+
+  #btnAlterar {
+      font-weight: bolder;
+      padding: 10px 50px;
+      background-color: #175fac;
+      border: 1px solid #175fac;
+      color: #fff;
+      font-weight: bolder;
+      border-radius: 10px;
+      cursor: pointer;
+      outline: none;
+      margin-top: 15px;
+  }
+
+      #btnAlterar:hover {
+          background-color: #2372c7;
+      }
 
 
-.senha {
-  text-decoration: none;
-}
+  table {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-top: 35px;
+  }
+
+      #palavrasChave {
+          max-width: 803px;
+          min-height: 35px;
+          padding: 5px 15px;
+          font-size: 18px;
+          border-radius: 10px;
+          border: 2px solid #ddd;
+          outline: none;
+      }
+
+          #addPalavraChave {
+              padding: 0 5px;
+              border-radius: 50%;
+              background-color: #ddd;
+              color: #999;
+              cursor: pointer;
+              user-select: none;
+          }
+
+              #addPalavraChave:hover {
+                  background-color: #ddd;
+              }
+
+          #palavrasChave:hover {
+              border: 2px solid #999;
+          }
 
 
-/*
-  CONTAINER EMPRESA
-*/
+      .palavraChave {
+          width: 138px;
+          height: 30px;
+          border: 0;
+          outline: none;
+          border-radius: 15px;
+          margin: 5px;
+          padding: 5px 15px;
+          outline: none;
+          background-color: #2372c7;
+          color: #fff;
+      }
+      
+      #tblCandidato p {
+          padding: 20px 5px;
+      }
 
+          #tblEmpresa p {
+              padding: 5px 5px;
+          }
 
-.containerEmpresa {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
+      #sobreEmpresa {
+          border: 2px solid #ddd;
+          border-radius: 10px;
+          outline: none;
+          padding: 10px;
+          min-height: 180px;
+          max-height: 180px;
+          min-width: 949px;
+          max-width: 949px;
+      }
 
-
-.wrapperDadosContent {
-  display: flex;
-  flex-direction: column;
-}
-
-
-.areaSobre {
-  width: 206.4px;
-  height: 181px;
-  resize: none;
-  padding: 0.4rem;
-}
-
-
-.textArea {
-  margin-left: 1rem;
-}
-
-
-.senha {
-  position: relative;
-}
-
-
-.senha::after {
-  position: absolute;
-  left: 0;
-  bottom: -0.5rem;
-  content: "";
-  height: 1px;
-  width: 40vw;
-  background-color: rgb(218, 218, 218);
-}
-
-
-
-.editar {
-  align-self: flex-start;
-  margin-top: 1.5rem;
-  margin-left: -0.5rem;
-}
-
-
-.btn {
-  width: 9.4rem;
-	box-shadow:inset 0px 39px 0px -24px #2269b4;
-	background-color:#175fac;
-	border-radius:4px;
-	border:1px solid #ffffff;
-	display:inline-block;
-	cursor:pointer;
-	color:#ffffff;
-	font-family:Arial;
-	font-size:15px;
-	padding:6px 15px;
-	text-decoration:none;
-	text-shadow:0px 1px 0px #2269b4;
-}
-
-.btn:hover {
-	background-color:#2269b4;
-}
-
-.btn:active {
-	position:relative;
-	top:1px;
-}
-
+          #sobreEmpresa:focus {
+              border: 2px solid #999;
+          }
 
