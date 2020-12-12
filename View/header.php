@@ -159,7 +159,7 @@
 
 <header>
         
-        <a id="logo" href="http://localhost/VagasOnline/index.php"><img width="150" src="https://upload.wikimedia.org/wikipedia/commons/3/35/Logo-catho.png" alt="logo"></a>
+        <a id="logo" href="http://localhost/VagasOnline/index.php"><img width="150" src="http://localhost/VagasOnline/media/logo.png" alt="logo"></a>
         <ul>
             <li><a href="http://localhost/VagasOnline/index.php">Tela Inicial</a></li>
             <li><a href="http://localhost/VagasOnline/view/listaVagas.php">Vagas</a></li>
