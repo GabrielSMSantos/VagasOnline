@@ -8,6 +8,7 @@
         font-family: Arial, Helvetica, sans-serif;
     }
 
+
     header {
         display: flex;
         justify-content: space-around;
@@ -162,7 +163,7 @@
         <ul>
             <li><a href="http://localhost/VagasOnline/index.php">Tela Inicial</a></li>
             <li><a href="http://localhost/VagasOnline/view/listaVagas.php">Vagas</a></li>
-            <li><a href="#">Empresas</a></li>
+            <li><a href="http://localhost/VagasOnline/view/listaEmpresas.php">Empresas</a></li>
         </ul>
 
 

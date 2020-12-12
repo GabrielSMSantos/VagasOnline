@@ -1,5 +1,6 @@
 #listaVagas {
     width: 100%;
+    min-height: 350px;
     padding: 0 10vw;
     background-color: #FAFAFA;
 }

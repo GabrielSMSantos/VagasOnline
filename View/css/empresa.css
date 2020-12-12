@@ -1,0 +1,26 @@
+main {
+    display: flex;
+    min-height: 350px;
+    padding: 30px 4%;
+    background-color: #FAFAFA;
+}
+
+    #empresa {
+        position: relative;
+        width: 800px;
+        min-height: 180px;
+        background-color: #fff;
+        border: 1px solid #ccc;
+        border-radius: 10px;
+        padding: 20px;
+    }
+
+        #nomeEmpresa {
+            color: #175fac;
+        }
+
+       
+        #descricaoEmpresa {
+            margin-top: 25px;
+            color: #000;
+        }

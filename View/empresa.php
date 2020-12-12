@@ -11,7 +11,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="http://localhost/VagasOnline/view/css/vaga.css">
+    <link rel="stylesheet" href="http://localhost/VagasOnline/view/css/empresa.css">
     <title><?= $empresa[1]; ?></title>
 </head>
 <body>
@@ -19,10 +19,10 @@
     <?php include "header.php"; ?>
 
     <main>
-        <div id="vaga">
-            <h1 id="nomeVaga"><img src="http://localhost/VagasOnline/media/iconEmpresa_Big.png"><?= $empresa[1]; ?></h1>
+        <div id="empresa">
+            <h1 id="nomeEmpresa"><img src="http://localhost/VagasOnline/media/iconEmpresa_Big.png"><?= $empresa[1]; ?></h1>
 
-            <p id="descricaoVaga">
+            <p id="descricaoEmpresa">
                 <?= $empresa[4]; ?>
             </p>
             <br><br>

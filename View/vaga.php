@@ -23,7 +23,7 @@
     <?php include "header.php"; ?>
 
     <main>
-        <div id="vaga" <?= (isset($_SESSION["tipoUsuario"]) && $_SESSION["tipoUsuario"] == "Empresa") ? 'style="width: 100%;"' : "" ?>>
+        <div id="vaga" <?= (isset($_SESSION["tipoUsuario"]) && $_SESSION["tipoUsuario"] == "Empresa" && $vaga[1] == $_SESSION["id"]) ? 'style="width: 100%;"' : "" ?>>
 
             <?php
                 if(isset($_SESSION["tipoUsuario"]) && $_SESSION["tipoUsuario"] == "Empresa" && $vaga["id_empresa"] == $_SESSION["id"]){
@@ -90,7 +90,7 @@
 
             <?php
                 endif;
-            elseif(isset($_SESSION["id"]) && isset($_GET["id"]) && $_SESSION["tipoUsuario"] == "Empresa"):
+            elseif(isset($_SESSION["id"]) && isset($_GET["id"]) && $_SESSION["tipoUsuario"] == "Empresa" && $vaga[1] == $_SESSION["id"]):
             ?>
 
                 <div id="CandidatosInscritos">   
@@ -131,7 +131,7 @@
                         </tr>
                         
                         <?php 
-                            if (isset($_GET["id"]))
+                            if (isset($_GET["id"])){
                                 $candidatos = CandidatosIncritosNaVaga($_GET["id"]); 
 
                                 if(!$candidatos) {
@@ -180,6 +180,7 @@
                                         </tr>
                                     ';
                                 }
+                            }
                         ?>
                     </table>
                     
@@ -187,6 +188,13 @@
                 </div>  
 
             <?php
+            else:
+                if (!isset($_SESSION["tipoUsuario"])) {
+                    echo '
+                        <a id="enviarMensagem" href="http://localhost/VagasOnline/view/login.php">Faça Login para se candidatar a vaga</a>
+                    ';
+                }                
+            
             endif;
             ?>
             
@@ -196,7 +204,7 @@
 
 
         <?php 
-            if(isset($_SESSION["tipoUsuario"]) && $_SESSION["tipoUsuario"] == "Candidato"):            
+            if(!isset($_SESSION["tipoUsuario"]) || $_SESSION["tipoUsuario"] == "Candidato" || $vaga[1] != $_SESSION["id"]):            
         ?>
         
         <div id="empresa">
@@ -209,7 +217,7 @@
 
             <br><br>
 
-            <?= (isset($_SESSION["id"]) && $isInscrito) ? '<a id="enviarMensagem" href="http://localhost/VagasOnline/view/mensagens.php?idEmpresa='.$empresa["id_empresa"].'&idVaga='.$_GET["id"].'">Enviar mensagem para empresa</a>' : "" ?>
+            <?= (isset($_SESSION["id"]) && isset($isInscrito) && $isInscrito) ? '<a id="enviarMensagem" href="http://localhost/VagasOnline/view/mensagens.php?idEmpresa='.$empresa["id_empresa"].'&idVaga='.$_GET["id"].'">Enviar mensagem para empresa</a>' : "" ?>
 
         </div>
 

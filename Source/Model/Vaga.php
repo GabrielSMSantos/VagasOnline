@@ -141,3 +141,14 @@ function VerificarNumInscricoes($idVaga)
 
     return count($numInscricoes);
 }
+
+
+function VagasCandidatadas($idCandidato)
+{
+    include "banco.php";
+
+    $dataVagasCandidatadas = $conn->query("SELECT * FROM vaga as A LEFT JOIN inscritos_vaga as B on a.id_vaga = b.id_vaga WHERE b.cpf_candidato = '$idCandidato'");
+    $dataVagasCandidatadas->execute();
+
+    return $dataVagasCandidatadas->fetchAll();
+}

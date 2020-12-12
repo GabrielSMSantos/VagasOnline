@@ -99,6 +99,34 @@
                             </div>
                         ';
                 endif;
+                require_once "Source/Model/Vaga.php";
+
+                $vagas = VagasCandidatadas($_SESSION["id"]);
+                
+                echo '
+                    <div class="wrapperTitle">
+                        <h1>Vagas Candidatadas</h1>
+                    </div>
+                    <div class="wrapper">
+                ';
+                foreach($vagas as $vaga) {
+                    echo '
+                            <div class="vaga">
+                                <div class="dadosVaga">
+                                    <h2 class="nomeVaga">'.$vaga[2].'</h2>
+                                    <b id="nomeEmpresa">'.$nomeEmpresa["nome_empresa"].'</b>
+                                    <p id="salario">Salário: <b>R$ '.number_format($vaga[3], 2, ",", ".").'</b></p>
+                                    <p id="vagasDisponiveis">Vagas Disponíveis: '.$vaga[10].'</p>
+                                    <p class="descricaoVaga">
+                                        '.$vaga[6].'
+                                    </p>
+                                </div>
+            
+                                <a class="linkVaga" href="http://localhost/VagasOnline/view/vaga.php?id='.$vaga[0].'">Visualizar Vaga</a>
+                            </div>
+                        
+                        ';
+                }
             ?>
         </div>
 
@@ -152,16 +180,48 @@
 
         <?php  
             else:
-        ?>
+                include "Source/Model/Vaga.php";
+                include "Source/Model/Empresa.php";
+                $vagas = BuscarTodasVagas();
+       
+                echo '
+                <div class="wrapperTitle">
+                    <h1>Vagas Abertas</h1>
+                </div>
+                <div class="wrapper">
+                ';
+                foreach ($vagas as $vaga) {
 
-            <div class="AlertaSemConteudo">
-                <h1>Nenhuma Vaga Cadastrada</h1>
-            </div>
 
+                    $nomeEmpresa = getEmpresa($vaga[1]);
+                    $verificarNumIncricoes = VerificarNumInscricoes($vaga[0]);
+                
+                    if ($verificarNumIncricoes < $vaga[7]) {
+                        echo '
+                            <div class="vaga">
+                                <div class="dadosVaga">
+                                    <h2 class="nomeVaga">'.$vaga[2].'</h2>
+                                    <b id="nomeEmpresa">'.$nomeEmpresa["nome_empresa"].'</b>
+                                    <p id="salario">Salário: <b>R$ '.number_format($vaga[3], 2, ",", ".").'</b></p>
+                                    <p id="vagasDisponiveis">Vagas Disponíveis: '.$vaga[10].'</p>
+                                    <p class="descricaoVaga">
+                                        '.$vaga[6].'
+                                    </p>
+                                </div>
+            
+                                <a class="linkVaga" href="http://localhost/VagasOnline/view/vaga.php?id='.$vaga[0].'">Visualizar Vaga</a>
+                            </div>
+                        
+                        ';
+                    }
+                }
+                echo '</div>';
 
-        <?php
+                
             endif; 
-        ?>
+            
+                
+            ?>
 
     </main>
 
